@@ -1,12 +1,11 @@
   queue()
       .defer(d3.tsv, "assets/rick-morty-data/characters.tsv")
-      .defer(d3.tsv, "assets/rick-morty-data/episodes.tsv")
-      .defer(d3.tsv, "assets/rick-morty-data/locations.tsv")
       .await(makeGraphs);
 
   function makeGraphs(error, rmData) {
       var ndx = crossfilter(rmData);
-
+      
+      dead_or_alive(ndx);
       show_genders(ndx);
       dc.renderAll();
   }
@@ -29,5 +28,18 @@
           .yAxis().ticks(20);
   }
   
+  
+  function dead_or_alive(ndx){
+    var dim = ndx.dimension(dc.pluck('status'));
+    var group = dim.group();
+    
+    dc.pieChart("#dead-or-alive")
+      .height(500)
+      .radius(100)
+      .transitionDuration(1500)
+      .dimension(dim)
+      .group(group);
+      
+  }
   
   

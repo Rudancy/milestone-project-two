@@ -3,34 +3,117 @@
 
 <head>
     <title>Rick and Morty</title>
-    
-    
-    
-    
-    
-    <script type="text/javascript" src="assets/js/graphs.js"></script>
-    
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css" />
-    
+
+
     <script type="text/javascript" src="assets/js/d3.min.js"></script>
     <script type="text/javascript" src="assets/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="assets/js/dc.min.js"></script>
     <script type="text/javascript" src="assets/js/queue.min.js"></script>
-    <script type="text/javascript" src="assets/js/graphs.js"></script>
-  
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/graphs-characters.js"></script>
+    <script type="text/javascript" src="assets/js/graphs-locations.js"></script>
+    <script type="text/javascript" src="assets/js/graphs-episodes.js"></script>
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+
+
 </head>
 
 <body>
-    <h1>Rick and Morty.... the data</h1>
-    
-    <div>
-    <h3>The Dead and The Not So Dead</h3>
-    <div id="dead-or-alive"></div>
+
+    <section id >
+
+        <div class="row">
+            <div class="col-12-sm col-6-md col-6-lg">
+                <h1>Rick and Morty.... the data</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12-sm col-6-md col-6-lg">
+                    <h3>The Dead and The Not So Dead</h3>
+                    <div id="dead-or-alive"></div>
+                </div>
+
+                <div class="col-12-sm col-6-md col-6-lg">
+                    <h3>Be You Man or Woman, or Other.....</h3>
+                    <div id="gender-chart"></div>
+                </div>
+
+                <div class="col-12-sm col-6-md col-6-lg">
+                    <h3>Average Appearence of Genders Across All Episode </h3>
+                    <div id="appearence-average"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12-sm col-6-md col-6-lg">
+                <h3>how many types of characters</h3>
+                <div id="types-of-characters"></div>
+            </div>
+
+            <div class="col-12-sm col-6-md col-6-lg">
+                <h3>compositeChart</h3>
+                <div id="appearences-main-characters"></div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12-sm col-6-md col-6-lg">
+                <h3>how many types of places</h3>
+                <div id="types-of-places"></div>
+            </div>
+
+
+            <div class="col-12-sm col-6-md col-6-lg">
+                <h3>how many types of places, in types of dimensions.....</h3>
+                <div id="places-in-dimensions"></div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div>
+                <h3>Table of information</h3>
+            </div>
+
+            <div id="table"></div>
+
+
+        </div>
+
     </div>
     
-    <div>
-    <h3>Be You Man or Woman, or Other.....</h3>
-    <div id="gender-chart"></div>
-    </div>
+     <div>
+         <div style = "width: 600px;">
+            <div id = "mystats" class = "dc-data-count" style = "float: right">
+               <span class = "filter-count"></span> selected out of <span
+               class = "total-count"></span> | <a href = "javascript:dc.filterAll();
+               dc.renderAll();">Reset All</a>
+            </div>
+         </div>
+
+         <div style = "clear: both; padding-top: 20px;">
+            <div>
+               <div id = "line"></div>
+            </div>
+         </div>
+
+         <div style = "clear: both">
+            <div id = "mytable"></div>
+         </div>
+      </div>
+    
+    
+    
 </body>

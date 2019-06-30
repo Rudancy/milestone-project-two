@@ -1,0 +1,13 @@
+
+/*------------------------------------------------------ graph styling---------*/
+
+#places-in-dimensions g.axis.x text {
+    transform: rotate(-45deg) translate(-70px, 0px);
+}
+
+
+/*--------------------------------------table styling----------*/
+
+td, th {
+  padding: 1px 4px;
+}
